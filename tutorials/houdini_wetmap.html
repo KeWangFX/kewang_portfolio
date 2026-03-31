@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        .tut-page { padding: 140px 0 100px; }
+        /* ── Page shell ── */
+        .tut-page { padding: 120px 0 100px; }
 
         .tut-back {
             display: inline-flex;
@@ -17,28 +18,37 @@
             gap: 8px;
             font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 52px;
+            margin-bottom: 36px;
             transition: color 0.2s;
         }
         .tut-back:hover { color: var(--text); }
 
-        .tut-page-header { margin-bottom: 64px; }
-        .tut-page-header h1 { font-size: clamp(36px,5vw,64px); margin-bottom: 16px; }
+        .tut-page-header { margin-bottom: 40px; }
+        .tut-page-header h1 { font-size: clamp(28px, 4vw, 52px); margin-bottom: 12px; }
         .tut-page-header p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-dim);
-            max-width: 580px;
+            max-width: 560px;
             line-height: 1.75;
         }
 
-        /* ── Player ── */
+        /* ── Two-column layout (desktop) ── */
+        .tut-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* ── Left: player column ── */
+        .player-col {}
+
         .player-wrap {
             width: 100%;
             aspect-ratio: 16/9;
             background: #000;
             border-radius: var(--radius);
             overflow: hidden;
-            margin-bottom: 12px;
             border: 1px solid var(--border);
         }
         .player-wrap video {
@@ -47,25 +57,45 @@
             display: block;
             object-fit: contain;
         }
+        .player-info {
+            padding: 16px 0 0;
+        }
         .player-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 6px;
+            color: var(--text);
         }
         .player-meta {
             font-size: 12px;
             color: var(--text-muted);
-            margin-bottom: 40px;
         }
 
-        /* ── Playlist ── */
-        .playlist { display: flex; flex-direction: column; gap: 4px; }
+        /* ── Right: playlist sidebar ── */
+        .playlist-col {
+            position: sticky;
+            top: calc(var(--nav-h) + 16px);
+        }
+        .playlist-label {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding: 0 4px;
+        }
+        .playlist {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
         .playlist-item {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 14px 16px;
+            gap: 12px;
+            padding: 12px;
             border: 1px solid var(--border);
             border-radius: var(--radius);
             cursor: pointer;
@@ -82,16 +112,18 @@
         }
         .playlist-num {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             color: var(--text-muted);
-            width: 24px;
+            width: 20px;
             flex-shrink: 0;
+            text-align: center;
         }
         .playlist-item.active .playlist-num { color: var(--accent); }
+
         .playlist-thumb {
-            width: 96px;
-            height: 54px;
+            width: 80px;
+            height: 45px;
             border-radius: 2px;
             overflow: hidden;
             flex-shrink: 0;
@@ -105,43 +137,74 @@
         }
         .playlist-info { flex: 1; min-width: 0; }
         .playlist-info h4 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         .playlist-info p {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
             line-height: 1.4;
+        }
+        .playlist-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            flex-shrink: 0;
         }
         .playlist-duration {
             font-size: 11px;
             color: var(--text-muted);
             white-space: nowrap;
-            flex-shrink: 0;
         }
-        .playlist-playing {
-            display: none;
-            flex-shrink: 0;
-        }
-        .playlist-item.active .playlist-playing { display: flex; align-items: center; }
-        .playlist-playing svg { animation: spinPulse 1.2s ease-in-out infinite; }
-        @keyframes spinPulse {
+        .playlist-playing { display: none; }
+        .playlist-item.active .playlist-playing { display: block; }
+        .playlist-playing svg { animation: pulse 1.2s ease-in-out infinite; }
+        @keyframes pulse {
             0%,100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.85); }
+            50%      { opacity: 0.4; transform: scale(0.8); }
         }
 
-        @media (max-width: 768px) {
+        /* ── Tablet: 900px ── */
+        @media (max-width: 900px) {
+            .tut-layout {
+                grid-template-columns: 1fr;
+            }
+            .playlist-col {
+                position: static;
+            }
+            .playlist {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .playlist-thumb {
+                width: 72px;
+                height: 40px;
+            }
+        }
+
+        /* ── Mobile: 600px ── */
+        @media (max-width: 600px) {
+            .tut-page { padding: 90px 0 80px; }
+            .tut-page-header { margin-bottom: 28px; }
+
+            .playlist { grid-template-columns: 1fr; }
+
             .playlist-thumb { display: none; }
+            .playlist-info p { display: none; }
+
+            .player-title { font-size: 15px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAV -->
     <nav id="nav">
         <a href="../index.html" class="nav-logo">KE WANG</a>
         <ul class="nav-links">
@@ -152,7 +215,21 @@
             <li><a href="../index.html#contact">Contact</a></li>
         </ul>
         <a href="mailto:keke19870699@gmail.com" class="nav-cta">Hire Me</a>
+        <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="../index.html#works"     class="mobile-link">Works</a></li>
+            <li><a href="../index.html#about"     class="mobile-link">About</a></li>
+            <li><a href="../index.html#tutorials" class="mobile-link">Tutorials</a></li>
+            <li><a href="../index.html#resume"    class="mobile-link">Resume</a></li>
+            <li><a href="../index.html#contact"   class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="mailto:keke19870699@gmail.com" class="mobile-cta">Hire Me</a>
+    </div>
 
     <section class="tut-page">
         <div class="container">
@@ -170,85 +247,98 @@
                 <p>Production techniques for wetmap and rain-driven wetness in Houdini — geometry setup, VEX logic, and Karma material blending.</p>
             </div>
 
-            <!-- Player -->
-            <div class="player-wrap reveal">
-                <video id="mainPlayer" controls playsinline preload="auto"></video>
-            </div>
-            <p class="player-title" id="playerTitle">Wetmap Fundamentals</p>
-            <p class="player-meta" id="playerMeta">Part 01 · 24 min 35 sec · Houdini · Water FX</p>
+            <div class="tut-layout">
 
-            <!-- Playlist -->
-            <div class="playlist" id="playlist">
-
-                <div class="playlist-item active" data-src="../assets/videos/tutorials/houdini_wetmap/wetmap.mp4" data-title="Wetmap Fundamentals" data-meta="Part 01 · 24 min 35 sec · Houdini · Water FX">
-                    <span class="playlist-num">01</span>
-                    <div class="playlist-thumb">
-                        <img src="../assets/videos/tutorials/houdini_wetmap/wetmap_poster.jpg" alt="">
+                <!-- Left: player -->
+                <div class="player-col reveal">
+                    <div class="player-wrap">
+                        <video id="mainPlayer" controls playsinline preload="auto"></video>
                     </div>
-                    <div class="playlist-info">
-                        <h4>Wetmap Fundamentals</h4>
-                        <p>Attribute transfer, VEX-driven wetness accumulation and material blending in Karma.</p>
+                    <div class="player-info">
+                        <p class="player-title" id="playerTitle"></p>
+                        <p class="player-meta"  id="playerMeta"></p>
                     </div>
-                    <span class="playlist-duration">24:35</span>
-                    <span class="playlist-playing">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <circle cx="7" cy="7" r="6" fill="var(--accent)" fill-opacity="0.25"/>
-                            <circle cx="7" cy="7" r="3" fill="var(--accent)"/>
-                        </svg>
-                    </span>
                 </div>
 
-                <div class="playlist-item" data-src="../assets/videos/tutorials/houdini_wetmap/rain_wetmap.mp4" data-title="Rain Wetmap Simulation" data-meta="Part 02 · 23 min 42 sec · Houdini · Water FX">
-                    <span class="playlist-num">02</span>
-                    <div class="playlist-thumb">
-                        <img src="../assets/videos/tutorials/houdini_wetmap/rain_wetmap_poster.jpg" alt="">
+                <!-- Right: playlist -->
+                <div class="playlist-col reveal">
+                    <p class="playlist-label">2 Videos</p>
+                    <div class="playlist" id="playlist">
+
+                        <div class="playlist-item"
+                             data-src="../assets/videos/tutorials/houdini_wetmap/wetmap.mp4"
+                             data-title="Wetmap Fundamentals"
+                             data-meta="Part 01 · 24:35 · Houdini · Water FX">
+                            <span class="playlist-num">01</span>
+                            <div class="playlist-thumb">
+                                <img src="../assets/videos/tutorials/houdini_wetmap/wetmap_poster.jpg" alt="Wetmap Fundamentals">
+                            </div>
+                            <div class="playlist-info">
+                                <h4>Wetmap Fundamentals</h4>
+                                <p>Attribute transfer, VEX wetness &amp; Karma blending.</p>
+                            </div>
+                            <div class="playlist-right">
+                                <span class="playlist-duration">24:35</span>
+                                <span class="playlist-playing">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <circle cx="6" cy="6" r="5" fill="var(--accent)" fill-opacity="0.25"/>
+                                        <circle cx="6" cy="6" r="2.5" fill="var(--accent)"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="playlist-item"
+                             data-src="../assets/videos/tutorials/houdini_wetmap/rain_wetmap.mp4"
+                             data-title="Rain Wetmap Simulation"
+                             data-meta="Part 02 · 23:42 · Houdini · Water FX">
+                            <span class="playlist-num">02</span>
+                            <div class="playlist-thumb">
+                                <img src="../assets/videos/tutorials/houdini_wetmap/rain_wetmap_poster.jpg" alt="Rain Wetmap Simulation">
+                            </div>
+                            <div class="playlist-info">
+                                <h4>Rain Wetmap Simulation</h4>
+                                <p>FLIP particle impact driving surface wetness.</p>
+                            </div>
+                            <div class="playlist-right">
+                                <span class="playlist-duration">23:42</span>
+                                <span class="playlist-playing">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <circle cx="6" cy="6" r="5" fill="var(--accent)" fill-opacity="0.25"/>
+                                        <circle cx="6" cy="6" r="2.5" fill="var(--accent)"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="playlist-info">
-                        <h4>Rain Wetmap Simulation</h4>
-                        <p>Driving wetmap accumulation from particle rain — linking FLIP impact data to surface wetness.</p>
-                    </div>
-                    <span class="playlist-duration">23:42</span>
-                    <span class="playlist-playing">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <circle cx="7" cy="7" r="6" fill="var(--accent)" fill-opacity="0.25"/>
-                            <circle cx="7" cy="7" r="3" fill="var(--accent)"/>
-                        </svg>
-                    </span>
                 </div>
 
             </div>
-
         </div>
     </section>
 
     <script src="../script.js"></script>
     <script>
-        const player   = document.getElementById('mainPlayer');
-        const titleEl  = document.getElementById('playerTitle');
-        const metaEl   = document.getElementById('playerMeta');
-        const items    = document.querySelectorAll('.playlist-item');
+        const player  = document.getElementById('mainPlayer');
+        const titleEl = document.getElementById('playerTitle');
+        const metaEl  = document.getElementById('playerMeta');
+        const items   = document.querySelectorAll('.playlist-item');
 
         function loadVideo(item) {
             items.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
-            const src = item.dataset.src;
-            const t   = item.dataset.title;
-            const m   = item.dataset.meta;
-            player.src = src;
+            player.src = item.dataset.src;
             player.load();
             player.play().catch(() => {});
-            titleEl.textContent = t;
-            metaEl.textContent  = m;
+            titleEl.textContent = item.dataset.title;
+            metaEl.textContent  = item.dataset.meta;
         }
 
-        // Load first video on page load
         loadVideo(items[0]);
 
-        items.forEach(item => {
-            item.addEventListener('click', () => loadVideo(item));
-        });
+        items.forEach(item => item.addEventListener('click', () => loadVideo(item)));
 
-        // Auto-advance to next video
         player.addEventListener('ended', () => {
             const active = document.querySelector('.playlist-item.active');
             const next   = active.nextElementSibling;
