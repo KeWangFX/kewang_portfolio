@@ -120,6 +120,15 @@ document.querySelectorAll('.work-card[data-video]').forEach(card => {
     });
 });
 
+/* ── Tutorial card video hover preview ──────────────────── */
+document.querySelectorAll('.tut-card').forEach(card => {
+    const vid = card.querySelector('.work-thumb-video');
+    if (vid) {
+        card.addEventListener('mouseenter', () => vid.play().catch(() => {}));
+        card.addEventListener('mouseleave', () => { vid.pause(); vid.currentTime = 0; });
+    }
+});
+
 /* ── Tutorial play buttons ───────────────────────────────── */
 // To enable: add data-video="https://youtube.com/embed/VIDEO_ID?autoplay=1"
 // to the <article class="tut-card"> element.

@@ -608,6 +608,7 @@ section { padding: 120px 0; }
     transition: opacity 0.3s;
 }
 .tut-card:hover .tut-thumb-bg { opacity: 0.8; }
+.tut-card:hover .work-play-overlay { opacity: 1 !important; }
 .play-btn {
     background: none;
     border: none;

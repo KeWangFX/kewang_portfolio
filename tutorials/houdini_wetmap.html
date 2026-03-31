@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houdini Wetmap — Ke Wang Tutorials</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .tut-page { padding: 140px 0 100px; }
+        .tut-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 52px;
+            transition: color 0.2s;
+        }
+        .tut-back:hover { color: var(--text); }
+        .tut-page-header { margin-bottom: 64px; }
+        .tut-page-header h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            margin-bottom: 16px;
+        }
+        .tut-page-header p {
+            font-size: 16px;
+            color: var(--text-dim);
+            max-width: 580px;
+            line-height: 1.75;
+        }
+        .tut-videos { display: flex; flex-direction: column; gap: 80px; }
+        .tut-video-block {}
+        .tut-video-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .tut-video-block h2 {
+            font-size: clamp(22px, 3vw, 32px);
+            margin-bottom: 12px;
+        }
+        .tut-video-block p {
+            font-size: 15px;
+            color: var(--text-dim);
+            margin-bottom: 28px;
+            line-height: 1.75;
+            max-width: 620px;
+        }
+        .tut-video-wrap {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: var(--bg-3);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .tut-video-wrap video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            background: #000;
+        }
+        .tut-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <a href="../index.html" class="nav-logo">KE WANG</a>
+        <ul class="nav-links">
+            <li><a href="../index.html#works">Works</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#tutorials">Tutorials</a></li>
+            <li><a href="../index.html#resume">Resume</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <a href="mailto:keke19870699@gmail.com" class="nav-cta">Hire Me</a>
+    </nav>
+
+    <section class="tut-page">
+        <div class="container">
+
+            <a href="../index.html#tutorials" class="tut-back">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Tutorials
+            </a>
+
+            <div class="tut-page-header reveal">
+                <p class="section-eyebrow">Houdini · Water FX</p>
+                <h1>Houdini Wetmap</h1>
+                <p>Production techniques for creating realistic wetmap and rain wetmap effects in Houdini — covering geometry setup, shader integration and simulation-driven wetness.</p>
+            </div>
+
+            <div class="tut-videos">
+
+                <div class="tut-video-block reveal-up">
+                    <p class="tut-video-label">Part 01</p>
+                    <h2>Wetmap Fundamentals</h2>
+                    <p>Setting up a wetmap system from scratch — attribute transfer, VEX-driven wetness accumulation and material blending in Karma.</p>
+                    <div class="tut-video-wrap">
+                        <video src="../assets/videos/tutorials/houdini_wetmap/wetmap.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                </div>
+
+                <hr class="tut-divider">
+
+                <div class="tut-video-block reveal-up">
+                    <p class="tut-video-label">Part 02</p>
+                    <h2>Rain Wetmap Simulation</h2>
+                    <p>Driving wetmap accumulation from a particle rain simulation — linking FLIP/particle impact data to surface wetness in real time.</p>
+                    <div class="tut-video-wrap">
+                        <video src="../assets/videos/tutorials/houdini_wetmap/rain_wetmap.mp4" controls playsinline preload="metadata"></video>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="../script.js"></script>
+</body>
+</html>
