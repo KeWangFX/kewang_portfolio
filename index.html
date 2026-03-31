@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ke Wang — FX Artist specializing in Water, Pyro, RBD and AI Visual Effects. Based in London.">
+    <title>Ke Wang — FX Artist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+    <nav id="nav">
+        <a href="#" class="nav-logo">KE WANG</a>
+        <ul class="nav-links">
+            <li><a href="#works">Works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#tutorials">Tutorials</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="mailto:keke19870699@gmail.com" class="nav-cta">Hire Me</a>
+        <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#works" class="mobile-link">Works</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#tutorials" class="mobile-link">Tutorials</a></li>
+            <li><a href="#resume" class="mobile-link">Resume</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="mailto:keke19870699@gmail.com" class="mobile-cta">Hire Me</a>
+    </div>
+
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section id="hero">
+        <div class="hero-bg-gradient"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow reveal">FX Artist · AI Specialist · London, UK</p>
+            <h1 class="hero-title reveal">KE<br>WANG</h1>
+            <p class="hero-subtitle reveal">Water · Fire · Smoke · Destruction</p>
+            <div class="hero-actions reveal">
+                <button class="btn-primary" id="showreelBtn">
+                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
+                        <path d="M1 1L11 7L1 13V1Z" fill="currentColor"/>
+                    </svg>
+                    Watch Showreel
+                </button>
+                <a href="#works" class="btn-outline">View Work</a>
+            </div>
+        </div>
+        <div class="hero-tags">
+            <span>Houdini FX</span>
+            <span>Ocean Simulations</span>
+            <span>Pyro &amp; Fire</span>
+            <span>AI Visual FX</span>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll</span>
+            <svg width="14" height="24" viewBox="0 0 14 24" fill="none">
+                <path d="M7 1L7 23M7 23L1 17M7 23L13 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Showreel Modal -->
+    <div class="modal" id="showreelModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="modal-video">
+                <iframe id="showreelIframe"
+                    src=""
+                    data-src="https://www.youtube.com/embed/OrwAaQ6LOTo?autoplay=1&rel=0&modestbranding=1"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <video id="localVideo" src="" controls playsinline></video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-col reveal-left">
+                    <div class="about-image-wrap">
+                        <!-- Place your profile photo as assets/profile.jpg -->
+                        <img src="assets/profile.jpg" alt="Ke Wang — FX Artist" loading="lazy">
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">50+</span>
+                            <span class="stat-label">VFX Shots</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">8+</span>
+                            <span class="stat-label">Productions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text-col reveal-right">
+                    <p class="section-eyebrow">About</p>
+                    <h2>Partnering with directors to bring impossible worlds to life.</h2>
+                    <p class="about-body">FX Artist and 3D Generalist with 5+ years of experience crafting water, fire, smoke, and environmental effects for film, TV, and commercials. From 50+ shots of ocean simulations in <em>Ponniyin Selvan: II</em> to high-end commercial work for Apple Watch and L'Oréal, I push Houdini (Solaris, USD) and Nuke to their creative limits.</p>
+                    <p class="about-body">MA in Digital Effects from Bournemouth University. Cross-cultural background spanning Eastern and Western studios, blending technical precision with artistic vision.</p>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Water FX</span>
+                        <span class="skill-tag">FLIP Fluids</span>
+                        <span class="skill-tag">Ocean Simulation</span>
+                        <span class="skill-tag">Pyro FX</span>
+                        <span class="skill-tag">RBD Destruction</span>
+                        <span class="skill-tag">Vellum</span>
+                        <span class="skill-tag">Houdini</span>
+                        <span class="skill-tag">USD / Solaris</span>
+                        <span class="skill-tag">Karma</span>
+                        <span class="skill-tag">Nuke</span>
+                        <span class="skill-tag">AI FX</span>
+                        <span class="skill-tag">ComfyUI</span>
+                    </div>
+                    <a href="assets/ke-wang-resume.pdf" class="btn-outline" download>Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ WORKS ═══════════════════════════════ -->
+    <section id="works">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="section-eyebrow">Portfolio</p>
+                    <h2>Selected Works</h2>
+                </div>
+                <span class="section-count">09</span>
+            </div>
+            <div class="works-grid">
+
+                <!--
+                ══════════════════════════════════════════════════════
+                HOW TO ADD A NEW PROJECT:
+                1. Copy one <article class="work-card"> block below
+                2. Change --grad to a new CSS gradient (match FX type)
+                3. Update: work-type-badge, work-studio, work-year,
+                           work-title, work-desc
+                4. Optionally replace the gradient div with an <img>
+                ══════════════════════════════════════════════════════
+                -->
+
+                <article class="work-card reveal-up" data-video="assets/videos/ps2.mp4">
+                    <div class="work-thumb" style="--grad: linear-gradient(135deg,#0a2e5e 0%,#1a6494 60%,#0d4a7a 100%)">
+                        <video class="work-thumb-video" src="assets/videos/ps2.mp4" muted playsinline preload="metadata"></video>
+                        <span class="work-badge">Ocean FX</span>
+                        <div class="work-play-overlay"><button class="play-btn" aria-label="Play"><svg viewBox="0 0 60 60" fill="none" width="44" height="44"><circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/><path d="M24 20L44 30L24 40V20Z" fill="white"/></svg></button></div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-studio">Pixl Visual Effects</span>
+                        <span class="work-year">2023</span>
+                    </div>
+                    <h3 class="work-title">Ponniyin Selvan: II</h3>
+                    <p class="work-desc">50+ shots of large-scale ocean water simulations for Mani Ratnam's epic historical blockbuster.</p>
+                </article>
+
+                <article class="work-card reveal-up" data-video="assets/videos/apple-watch.mp4">
+                    <div class="work-thumb" style="--grad: linear-gradient(135deg,#0c2340 0%,#1e5799 60%,#4a9eff 100%)">
+                        <video class="work-thumb-video" src="assets/videos/apple-watch.mp4" muted playsinline preload="metadata"></video>
+                        <span class="work-badge">Water FX</span>
+                        <div class="work-play-overlay"><button class="play-btn" aria-label="Play"><svg viewBox="0 0 60 60" fill="none" width="44" height="44"><circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/><path d="M24 20L44 30L24 40V20Z" fill="white"/></svg></button></div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-studio">Black Kite Studios</span>
+                        <span class="work-year">2024</span>
+                    </div>
+                    <h3 class="work-title">Apple Watch 10</h3>
+                    <p class="work-desc">Massive ocean waves and slow-motion water simulation for Apple's Series 10 launch campaign.</p>
+                </article>
+
+                <article class="work-card reveal-up">
+                    <a href="#">
+                        <div class="work-thumb" style="--grad: linear-gradient(135deg,#1a0530 0%,#6b3fa0 60%,#a78be0 100%)">
+                            <span class="work-badge">Water FX</span>
+                        </div>
+                        <div class="work-meta">
+                            <span class="work-studio">Axio</span>
+                            <span class="work-year">2024</span>
+                        </div>
+                        <h3 class="work-title">L'Oréal Professional Paris</h3>
+                        <p class="work-desc">Small-scale precision water drop simulation for L'Oréal Professionnel Paris advertising campaign.</p>
+                    </a>
+                </article>
+
+                <article class="work-card reveal-up">
+                    <a href="#">
+                        <div class="work-thumb" style="--grad: linear-gradient(135deg,#2d0a00 0%,#8b2500 60%,#e85d00 100%)">
+                            <span class="work-badge">Pyro FX</span>
+                        </div>
+                        <div class="work-meta">
+                            <span class="work-studio">Axio</span>
+                            <span class="work-year">2024</span>
+                        </div>
+                        <h3 class="work-title">The Burning City (焚城)</h3>
+                        <p class="work-desc">Large-scale pyro trail smoke and fire simulations for Chow Ka-sang's disaster epic.</p>
+                    </a>
+                </article>
+
+                <article class="work-card reveal-up" data-video="assets/videos/the-rig.mp4">
+                    <div class="work-thumb" style="--grad: linear-gradient(135deg,#0d1a2e 0%,#1a3a5c 60%,#2a6080 100%)">
+                        <video class="work-thumb-video" src="assets/videos/the-rig.mp4" muted playsinline preload="metadata"></video>
+                        <span class="work-badge">Ocean / Pyro FX</span>
+                        <div class="work-play-overlay"><button class="play-btn" aria-label="Play"><svg viewBox="0 0 60 60" fill="none" width="44" height="44"><circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/><path d="M24 20L44 30L24 40V20Z" fill="white"/></svg></button></div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-studio">Misc Studios</span>
+                        <span class="work-year">2022</span>
+                    </div>
+                    <h3 class="work-title">The Rig</h3>
+                    <p class="work-desc">Ocean FX, large-scale smoke, environmental fog and dust for Amazon Prime's supernatural thriller.</p>
+                </article>
+
+                <article class="work-card reveal-up" data-video="assets/videos/nautilus.mp4">
+                    <div class="work-thumb" style="--grad: linear-gradient(135deg,#00131a 0%,#004d5e 60%,#007a8c 100%)">
+                        <video class="work-thumb-video" src="assets/videos/nautilus.mp4" muted playsinline preload="metadata"></video>
+                        <span class="work-badge">Ocean FX</span>
+                        <div class="work-play-overlay"><button class="play-btn" aria-label="Play"><svg viewBox="0 0 60 60" fill="none" width="44" height="44"><circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/><path d="M24 20L44 30L24 40V20Z" fill="white"/></svg></button></div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-studio">Misc Studios</span>
+                        <span class="work-year">2022</span>
+                    </div>
+                    <h3 class="work-title">Nautilus</h3>
+                    <p class="work-desc">Underwater waterfalls and ocean FX for Disney+'s adventure series based on Jules Verne's classic.</p>
+                </article>
+
+                <article class="work-card reveal-up" data-video="assets/videos/bodies.mp4">
+                    <div class="work-thumb" style="--grad: linear-gradient(135deg,#1a0a00 0%,#5c2800 60%,#c05c00 100%)">
+                        <video class="work-thumb-video" src="assets/videos/bodies.mp4" muted playsinline preload="metadata"></video>
+                        <span class="work-badge">Explosion FX</span>
+                        <div class="work-play-overlay"><button class="play-btn" aria-label="Play"><svg viewBox="0 0 60 60" fill="none" width="44" height="44"><circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/><path d="M24 20L44 30L24 40V20Z" fill="white"/></svg></button></div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-studio">Misc Studios</span>
+                        <span class="work-year">2023</span>
+                    </div>
+                    <h3 class="work-title">Bodies</h3>
+                    <p class="work-desc">Air explosion FX for Netflix's time-travel crime thriller, blending practical and digital elements.</p>
+                </article>
+
+                <article class="work-card reveal-up" data-video="assets/videos/coyote.mp4">
+                    <div class="work-thumb" style="--grad: linear-gradient(135deg,#1a0d00 0%,#7a3500 60%,#d4650a 100%)">
+                        <video class="work-thumb-video" src="assets/videos/coyote.mp4" muted playsinline preload="metadata"></video>
+                        <span class="work-badge">Pyro / RBD</span>
+                        <div class="work-play-overlay"><button class="play-btn" aria-label="Play"><svg viewBox="0 0 60 60" fill="none" width="44" height="44"><circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/><path d="M24 20L44 30L24 40V20Z" fill="white"/></svg></button></div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-studio">Misc Studios</span>
+                        <span class="work-year">2023</span>
+                    </div>
+                    <h3 class="work-title">Coyote vs. Acme</h3>
+                    <p class="work-desc">Pyro fire, vellum rope dynamics, smoke and RBD destruction for the hybrid live-action feature.</p>
+                </article>
+
+                <article class="work-card reveal-up" data-video="assets/videos/atlantic.mp4">
+                    <div class="work-thumb" style="--grad: linear-gradient(135deg,#071a30 0%,#0d3d60 60%,#1a6090 100%)">
+                        <video class="work-thumb-video" src="assets/videos/atlantic.mp4" muted playsinline preload="metadata"></video>
+                        <span class="work-badge">Ocean FX</span>
+                        <div class="work-play-overlay"><button class="play-btn" aria-label="Play"><svg viewBox="0 0 60 60" fill="none" width="44" height="44"><circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.4" stroke-width="1.5"/><path d="M24 20L44 30L24 40V20Z" fill="white"/></svg></button></div>
+                    </div>
+                    <div class="work-meta">
+                        <span class="work-studio">Atlantic Productions</span>
+                        <span class="work-year">2024</span>
+                    </div>
+                    <h3 class="work-title">Taurus</h3>
+                    <p class="work-desc">Ocean splash, whitewater and foam simulations for the Apple Vision Pro TV series.</p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ TUTORIALS ═══════════════════════════ -->
+    <section id="tutorials">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="section-eyebrow">Knowledge Sharing</p>
+                    <h2>Tutorials</h2>
+                </div>
+                <a href="#" class="view-all-link">All Tutorials →</a>
+            </div>
+            <p class="section-intro">Sharing production-level techniques in Houdini FX, ocean simulations, and AI-driven visual effects workflows.</p>
+
+            <div class="tutorials-grid">
+
+                <!--
+                ══════════════════════════════════════════════════════
+                HOW TO ADD A NEW TUTORIAL:
+                1. Copy one <article class="tut-card"> block below
+                2. Change --tut-grad to match the topic colour
+                3. To use a YouTube video: change data-src to:
+                   https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1
+                4. To use a local video: add a <video> tag inside
+                   .tut-thumb instead of the placeholder div
+                5. Update: tut-category, h3, p, tut-duration
+                ══════════════════════════════════════════════════════
+                -->
+
+                <article class="tut-card reveal-up">
+                    <div class="tut-thumb">
+                        <div class="tut-thumb-bg" style="--tut-grad: linear-gradient(135deg,#0a2e5e,#1a6494)">
+                            <button class="play-btn" aria-label="Play tutorial">
+                                <svg viewBox="0 0 60 60" fill="none" width="52" height="52">
+                                    <circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.35" stroke-width="1.5"/>
+                                    <path d="M24 20L44 30L24 40V20Z" fill="white"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="tut-duration">Coming Soon</span>
+                    </div>
+                    <div class="tut-info">
+                        <span class="tut-cat">Houdini · Ocean FX</span>
+                        <h3>Production Ocean Simulation Pipeline</h3>
+                        <p>Complete walkthrough of a production-ready ocean setup — FLIP, whitewater, foam, and spray from scratch.</p>
+                    </div>
+                </article>
+
+                <article class="tut-card reveal-up">
+                    <div class="tut-thumb">
+                        <div class="tut-thumb-bg" style="--tut-grad: linear-gradient(135deg,#2d0a00,#8b2500)">
+                            <button class="play-btn" aria-label="Play tutorial">
+                                <svg viewBox="0 0 60 60" fill="none" width="52" height="52">
+                                    <circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.35" stroke-width="1.5"/>
+                                    <path d="M24 20L44 30L24 40V20Z" fill="white"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="tut-duration">Coming Soon</span>
+                    </div>
+                    <div class="tut-info">
+                        <span class="tut-cat">Houdini · Pyro FX</span>
+                        <h3>Pyro FX: Production Smoke &amp; Fire</h3>
+                        <p>Large-scale pyro for film — substep strategy, velocity control, and render optimisation.</p>
+                    </div>
+                </article>
+
+                <article class="tut-card reveal-up">
+                    <div class="tut-thumb">
+                        <div class="tut-thumb-bg" style="--tut-grad: linear-gradient(135deg,#1a0530,#6b3fa0)">
+                            <button class="play-btn" aria-label="Play tutorial">
+                                <svg viewBox="0 0 60 60" fill="none" width="52" height="52">
+                                    <circle cx="30" cy="30" r="29" stroke="white" stroke-opacity="0.35" stroke-width="1.5"/>
+                                    <path d="M24 20L44 30L24 40V20Z" fill="white"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <span class="tut-duration">Coming Soon</span>
+                    </div>
+                    <div class="tut-info">
+                        <span class="tut-cat">AI · ComfyUI</span>
+                        <h3>AI-Driven FX: ComfyUI for VFX Artists</h3>
+                        <p>Integrating AI image generation into a professional VFX pipeline — concept to comp.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ RESUME ═══════════════════════════════ -->
+    <section id="resume">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="section-eyebrow">Background</p>
+                    <h2>Experience</h2>
+                </div>
+                <a href="assets/ke-wang-resume.pdf" class="btn-outline btn-sm" download>Download CV</a>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>AI Artist · AI Specialist &amp; Advisor</h3>
+                            <span class="tl-date">Feb 2026 – Present</span>
+                        </div>
+                        <p class="tl-company">Atlantic Studios · London</p>
+                        <p class="tl-desc">Visual AI specialist, AI consultant, AI Director and researcher. Advising on AI-driven creative workflows for visual production.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>FX Artist</h3>
+                            <span class="tl-date">Nov – Dec 2024</span>
+                        </div>
+                        <p class="tl-company">Atlantic Productions · London</p>
+                        <p class="tl-desc">Ocean splash, whitewater and foam simulations.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>FX TD</h3>
+                            <span class="tl-date">Aug – Sep 2024</span>
+                        </div>
+                        <p class="tl-company">Black Kite Studios · London</p>
+                        <p class="tl-desc">Water FX for Apple Watch 10 — massive ocean and wave splash simulations, small-scale slow-motion water simulation.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>FX Artist</h3>
+                            <span class="tl-date">Apr – Jul 2024</span>
+                        </div>
+                        <p class="tl-company">Axio · London</p>
+                        <p class="tl-desc">Small-scale water drop simulation for L'Oréal Professionnel Paris. Pyro trail smoke and fire simulation for <em>The Burning City (焚城)</em>.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>FX Artist</h3>
+                            <span class="tl-date">Jul 2022 – Oct 2023</span>
+                        </div>
+                        <p class="tl-company">Pixl Visual Effects · London</p>
+                        <p class="tl-desc">50+ shots of ocean water simulations for <em>Ponniyin Selvan: II</em>. Water FX for <em>Noah's Ark</em>.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Junior FX Artist</h3>
+                            <span class="tl-date">Nov 2021 – Jul 2023</span>
+                        </div>
+                        <p class="tl-company">Misc Studios · London</p>
+                        <p class="tl-desc"><em>The Rig</em> (Ocean FX, smoke, fog) · <em>Nautilus</em> (waterfalls, ocean) · <em>Bodies</em> (air explosions) · <em>Coyote vs. Acme</em> (pyro, vellum, RBD).</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Trainee</h3>
+                            <span class="tl-date">Oct – Dec 2021</span>
+                        </div>
+                        <p class="tl-company">Technicolor Creative Studios · London</p>
+                        <p class="tl-desc">ACADEMY@TheFocus — FX for VFX intensive course.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="education-block">
+                <h3>Education</h3>
+                <div class="edu-grid">
+                    <div class="edu-item reveal-up">
+                        <span class="edu-year">2020 – 2021</span>
+                        <h4>MA Digital Effects</h4>
+                        <p>Bournemouth University</p>
+                    </div>
+                    <div class="edu-item reveal-up">
+                        <span class="edu-year">2006 – 2010</span>
+                        <h4>BA Communication &amp; Media Studies</h4>
+                        <p>Shandong University</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-cta">
+                    <h2>Let's work<br>together.</h2>
+                    <a href="mailto:keke19870699@gmail.com" class="footer-email">keke19870699@gmail.com</a>
+                    <a href="mailto:keke19870699@gmail.com" class="btn-primary btn-lg">Get In Touch</a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <a href="#works">Works</a>
+                        <a href="#about">About</a>
+                        <a href="#tutorials">Tutorials</a>
+                        <a href="#resume">Resume</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="https://www.linkedin.com/in/kewang-4b9508194" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://github.com/KeWangFX" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://youtu.be/OrwAaQ6LOTo" target="_blank" rel="noopener noreferrer">Showreel</a>
+                        <a href="mailto:keke19870699@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Ke Wang. All rights reserved.</p>
+                <p>London, United Kingdom</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
