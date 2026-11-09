@@ -22,6 +22,6 @@ const SITE_CONFIG = {
   },
 
   resume:       'assets/ke-wang-resume.pdf',
-  profileImage: 'assets/profile.jpg',
-  ogImage:      'https://kewangfx.github.io/kewang_portfolio/assets/profile.jpg'
+  profileImage: 'assets/profile.jpg?v=20261109',
+  ogImage:      'https://kewangfx.github.io/kewang_portfolio/assets/profile.jpg?v=20261109'
 };
