@@ -1,6 +1,6 @@
 # Ke Wang — FX Artist Portfolio
 
-Personal portfolio site for Ke Wang, Senior FX Artist at DNEG, London.
+Personal portfolio site for Ke Wang, a Senior FX TD based in Vietnam with previous production experience at DNEG.
 
 **Live site:** https://kewangfx.github.io/kewang_portfolio/
 
@@ -10,7 +10,7 @@ Plain HTML / CSS / JavaScript — no build tools, no dependencies.
 
 ## Contents
 
-- Hero with showreel modal (YouTube)
+- Hero with 2025 FX Showreel modal (YouTube)
 - Works — 9 projects with video thumbnail previews and modal playback
 - Tutorials section
 - Resume timeline
