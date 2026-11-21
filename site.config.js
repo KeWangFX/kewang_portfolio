@@ -6,12 +6,12 @@
 const SITE_CONFIG = {
   name:        'Ke Wang',
   title:       'Ke Wang — FX Artist',
-  description: 'FX Artist specialising in Water, Pyro, RBD and AI Visual Effects. Based in London.',
+  description: 'FX Artist specialising in Water, Pyro, RBD and AI Visual Effects. Based in Vietnam.',
   url:         'https://kewangfx.github.io/kewang_portfolio',
 
   contact: {
     email:    'keke19870699@gmail.com',
-    location: 'London, United Kingdom'
+    location: 'Vietnam'
   },
 
   social: {
